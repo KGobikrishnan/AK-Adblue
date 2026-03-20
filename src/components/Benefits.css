@@ -1,0 +1,110 @@
+.luxury-benefits {
+  background-color: var(--color-light-bg);
+  position: relative;
+}
+
+.luxury-section-header {
+  text-align: center;
+  margin-bottom: 80px;
+}
+
+.luxury-section-subtitle {
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 0.85rem;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  margin-bottom: 15px;
+}
+
+.luxury-section-title {
+  font-family: var(--font-heading);
+  font-size: 3.5rem;
+  font-weight: 800;
+  letter-spacing: -1px;
+}
+
+.luxury-benefits-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 40px;
+}
+
+.luxury-benefit-card {
+  background-color: var(--color-white);
+  padding: 50px 40px;
+  border-radius: 8px; /* Elegant subtle rounding */
+  box-shadow: var(--shadow-sm);
+  transition: all var(--transition-normal);
+  border: 1px solid rgba(0,0,0,0.03);
+  position: relative;
+  overflow: hidden;
+}
+
+.luxury-benefit-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 3px;
+  background-color: var(--color-valvoline-red);
+  transition: width var(--transition-normal);
+}
+
+.luxury-benefit-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-lg);
+}
+
+.luxury-benefit-card:hover::before {
+  width: 100%;
+}
+
+.luxury-benefit-icon {
+  position: relative;
+  display: inline-flex;
+  margin-bottom: 30px;
+  color: var(--color-valvoline-blue);
+}
+
+.icon-accent-dot {
+  position: absolute;
+  top: -2px;
+  right: -5px;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: var(--color-valvoline-red);
+}
+
+.luxury-benefit-title {
+  font-family: var(--font-heading);
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 15px;
+  color: var(--color-dark);
+}
+
+.luxury-benefit-desc {
+  font-size: 1.05rem;
+  color: var(--color-gray-text);
+  line-height: 1.7;
+}
+
+/* Mobile Responsive */
+@media (max-width: 900px) {
+  .luxury-benefits-grid {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+}
+
+@media (max-width: 768px) {
+  .luxury-section-title {
+    font-size: 2.5rem;
+  }
+  .luxury-benefit-card {
+    padding: 40px 30px;
+  }
+}

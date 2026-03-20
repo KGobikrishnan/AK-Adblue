@@ -1,0 +1,138 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Montserrat:wght@400;500;700;800&display=swap');
+
+:root {
+  /* Luxury Color Palette */
+  --color-white: #ffffff;
+  --color-dark: #1A1D20;        /* Deep Charcoal */
+  --color-dark-alt: #23272B;    /* Lighter Charcoal */
+  --color-light-bg: #F8F9FA;    /* Pearl Grey */
+  --color-gray-text: #6c757d;   
+  
+  /* Valvoline Brand Colors */
+  --color-valvoline-red: #E31837;
+  --color-valvoline-blue: #0033A0;
+  
+  --font-heading: 'Montserrat', sans-serif;
+  --font-body: 'Inter', sans-serif;
+  
+  --transition-fast: 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  --transition-normal: 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  --transition-slow: 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+  
+  --shadow-sm: 0 4px 12px rgba(0,0,0,0.05);
+  --shadow-md: 0 12px 30px rgba(0,0,0,0.08);
+  --shadow-lg: 0 24px 50px rgba(0,0,0,0.12);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--color-light-bg);
+  color: var(--color-dark);
+  line-height: 1.6;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  line-height: 1.2;
+  letter-spacing: -0.5px;
+  color: var(--color-dark);
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul {
+  list-style: none;
+}
+
+/* Utility Classes */
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 5%;
+}
+
+.section-padding {
+  padding: 120px 0;
+}
+
+@media (max-width: 768px) {
+  .section-padding {
+    padding: 80px 0;
+  }
+}
+
+/* Luxury Base Button */
+.btn-luxury {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px 40px;
+  background-color: var(--color-valvoline-red);
+  color: var(--color-white);
+  font-family: var(--font-body);
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  border: none;
+  border-radius: 4px; /* Sleek, very slight rounding */
+  cursor: pointer;
+  transition: all var(--transition-normal);
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 10px 20px rgba(227, 24, 55, 0.2);
+}
+
+.btn-luxury::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(to right, rgba(255,255,255,0) 0%, rgba(255,255,255,0.2) 50%, rgba(255,255,255,0) 100%);
+  transform: skewX(-20deg);
+  transition: left 0.6s ease;
+}
+
+.btn-luxury:hover {
+  background-color: #c91530; /* Darker red */
+  transform: translateY(-2px);
+  box-shadow: 0 15px 25px rgba(227, 24, 55, 0.3);
+}
+
+.btn-luxury:hover::after {
+  left: 200%;
+}
+
+.btn-secondary {
+  background-color: transparent;
+  color: var(--color-dark);
+  border: 2px solid var(--color-dark);
+}
+
+.btn-secondary:hover {
+  background-color: var(--color-dark);
+  color: var(--color-white);
+  box-shadow: var(--shadow-md);
+}
+
+.text-valvoline-red { color: var(--color-valvoline-red); }
+.text-valvoline-blue { color: var(--color-valvoline-blue); }
