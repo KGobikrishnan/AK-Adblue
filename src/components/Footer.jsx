@@ -64,7 +64,7 @@ const Footer = () => {
               <strong className="text-brand-red">Valvoline</strong>
             </div>
 
-            <p className="credits">Designed by <strong className="text-brand-red">Navi Promotions</strong></p>
+            <p className="credits">Designed by <a href="https://www.navipromotions.in/" target="_blank" rel="noopener noreferrer" className="text-brand-red" style={{ textDecoration: 'none' }}><strong>Navi Promotions</strong></a></p>
           </div>
         </div>
 
