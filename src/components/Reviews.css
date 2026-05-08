@@ -1,5 +1,6 @@
 .luxury-reviews {
-  background-color: var(--color-light-bg);
+  background-color: var(--color-gray-light);
+  padding: 120px 0;
   overflow: hidden;
 }
 
@@ -7,28 +8,27 @@
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
-  margin-bottom: 60px;
+  margin-bottom: 70px;
   gap: 40px;
 }
 
 .reviews-luxury-desc {
-  max-width: 400px;
+  max-width: 450px;
   color: var(--color-gray-text);
   font-size: 1.1rem;
-  line-height: 1.7;
+  line-height: 1.8;
 }
 
 .reviews-marquee-container {
   overflow: hidden;
   width: 100%;
   padding-bottom: 40px;
-  padding-top: 10px;
 }
 
 .reviews-marquee-track {
   display: flex;
   width: max-content;
-  animation: scrollMarquee 45s linear infinite;
+  animation: scrollMarquee 50s linear infinite;
 }
 
 .reviews-marquee-track:hover {
@@ -37,8 +37,8 @@
 
 .marquee-content {
   display: flex;
-  gap: 30px;
-  padding-right: 30px; /* Exact match to gap for perfect math loop */
+  gap: 40px;
+  padding-right: 40px;
 }
 
 @keyframes scrollMarquee {
@@ -47,37 +47,37 @@
 }
 
 .review-luxury-card {
-  width: 450px; /* Fixed width instead of min-width for consistent marquee */
+  width: 480px;
   background-color: var(--color-white);
-  padding: 50px 40px;
-  border-radius: 8px;
+  padding: 60px 50px;
+  border-radius: 25px;
   box-shadow: var(--shadow-sm);
-  scroll-snap-align: start;
   border: 1px solid rgba(0,0,0,0.03);
   transition: all var(--transition-normal);
 }
 
 .review-luxury-card:hover {
   box-shadow: var(--shadow-lg);
-  transform: translateY(-5px);
+  transform: translateY(-10px);
+  border-color: rgba(227, 24, 55, 0.1);
 }
 
 .review-quote-mark {
   font-family: var(--font-heading);
-  font-size: 4rem;
-  line-height: 0;
-  margin-top: 20px;
-  margin-bottom: 30px;
-  font-weight: 800;
+  font-size: 3.5rem;
+  line-height: 1;
+  margin-bottom: 25px;
+  color: var(--color-brand-red);
+  opacity: 0.2;
 }
 
 .review-luxury-text {
-  font-size: 1.25rem;
+  font-size: 1.2rem;
   color: var(--color-dark);
-  line-height: 1.7;
-  margin-bottom: 40px;
+  line-height: 1.8;
+  margin-bottom: 35px;
   font-family: var(--font-heading);
-  font-weight: 500;
+  font-weight: 600;
 }
 
 .review-author-block {
@@ -88,30 +88,18 @@
 
 .author-line {
   width: 30px;
-  height: 2px;
-  background-color: var(--color-valvoline-red);
+  height: 3px;
+  background-color: var(--color-brand-red);
+  border-radius: 2px;
 }
 
 .review-luxury-author {
   font-family: var(--font-body);
-  font-weight: 700;
-  font-size: 0.95rem;
-  letter-spacing: 1.5px;
-  text-transform: uppercase;
-  color: var(--color-gray-text);
-}
-
-.reviews-swipe-hint {
-  display: none;
-  align-items: center;
-  justify-content: center;
-  gap: 5px;
-  font-size: 0.85rem;
-  font-weight: 600;
-  color: var(--color-gray-text);
-  text-transform: uppercase;
+  font-weight: 800;
+  font-size: 0.9rem;
   letter-spacing: 2px;
-  margin-top: -10px;
+  text-transform: uppercase;
+  color: var(--color-brand-red);
 }
 
 /* Mobile Responsive */
@@ -119,17 +107,22 @@
   .reviews-luxury-header {
     flex-direction: column;
     align-items: flex-start;
+    gap: 20px;
+    margin-bottom: 50px;
   }
 }
 
 @media (max-width: 768px) {
+  .luxury-reviews {
+    padding: 80px 0;
+  }
   .review-luxury-card {
-    width: 320px;
-    padding: 30px 25px;
+    width: 350px;
+    padding: 40px 30px;
   }
   .review-luxury-text {
     font-size: 1.1rem;
-    margin-bottom: 30px;
+    margin-bottom: 25px;
   }
 }
 

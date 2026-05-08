@@ -15,16 +15,15 @@ const Hero = () => {
       <div className="container hero-luxury-container">
         
         <div className="hero-luxury-content">
-          {/* Valvoline Badge */}
-          <div className="valvoline-badge">
-            <div className="badge-line blue-line"></div>
+          {/* Brand Badge */}
+          <div className="brand-badge">
             <div className="badge-line red-line"></div>
-            <span>POWERED BY <strong>VALVOLINE ADBLUE</strong></span>
+            <span>POWERED BY <strong>ADBLUE PREMIUM</strong></span>
           </div>
           
           <h1 className="hero-luxury-title">
             PERFORMANCE <br/>
-            <span className="text-valvoline-red text-italic">UNLEASHED.</span>
+            <span className="text-brand-red text-italic">UNLEASHED.</span>
           </h1>
           
           <p className="hero-luxury-desc">

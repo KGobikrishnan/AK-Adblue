@@ -1,19 +1,38 @@
 @keyframes heroFadeUp {
-  from { opacity: 0; transform: translateY(30px); }
-  to { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 @keyframes heroScaleUp {
-  from { opacity: 0; transform: scale(0.95); }
-  to { opacity: 1; transform: scale(1); }
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
 }
 
 .luxury-hero {
   position: relative;
-  min-height: 100vh;
+  width: 95%;
+  max-width: 1400px;
+  aspect-ratio: 3 / 2;
+  margin: 110px auto 30px auto; /* Increased top margin for header clearance */
+  border-radius: 24px;
   display: flex;
   align-items: center;
   overflow: hidden;
+  box-shadow: var(--shadow-lg);
 }
 
 .hero-bg-wrapper {
@@ -28,11 +47,10 @@
 .hero-bg-image {
   width: 100%;
   height: 100%;
-  background-image: url('/assets/hero.png');
+  background-image: url('/assets/hero.jpeg');
   background-size: cover;
-  background-position: center;
+  background-position: center 20%; 
   background-repeat: no-repeat;
-  filter: contrast(1.1) brightness(0.9);
 }
 
 .hero-gradient-overlay {
@@ -41,29 +59,29 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(105deg, rgba(26, 29, 32, 0.95) 0%, rgba(26, 29, 32, 0.85) 45%, rgba(26, 29, 32, 0) 100%);
+  background: linear-gradient(90deg, rgba(18, 20, 22, 0.8) 0%, rgba(18, 20, 22, 0.4) 50%, rgba(18, 20, 22, 0) 100%);
 }
 
 .hero-luxury-container {
   position: relative;
   z-index: 2;
   width: 100%;
-  padding-top: 80px; 
+  padding: 0 8%;
 }
 
 .hero-luxury-content {
-  max-width: 750px;
+  max-width: 650px;
   animation: heroFadeUp 0.8s ease-out forwards;
 }
 
-.valvoline-badge {
+.brand-badge {
   display: inline-flex;
   align-items: center;
-  background-color: var(--color-white);
+  background-color: var(--color-brand-red);
   padding: 8px 20px;
   border-radius: 30px;
-  box-shadow: var(--shadow-md);
-  margin-bottom: 35px;
+  box-shadow: 0 4px 15px rgba(227, 24, 55, 0.2);
+  margin-bottom: 25px;
   opacity: 0;
   animation: heroScaleUp 0.6s ease-out 0.2s forwards;
 }
@@ -72,49 +90,45 @@
   width: 4px;
   height: 15px;
   border-radius: 2px;
-  margin-right: 5px;
+  background-color: var(--color-white);
+  margin-right: 15px;
 }
 
-.blue-line { background-color: var(--color-valvoline-blue); }
-.red-line { background-color: var(--color-valvoline-red); margin-right: 15px; }
-
-.valvoline-badge span {
+.brand-badge span {
   font-family: var(--font-body);
   font-size: 0.8rem;
-  font-weight: 500;
-  color: var(--color-dark);
+  font-weight: 600;
+  color: var(--color-white);
   letter-spacing: 1.5px;
   text-transform: uppercase;
 }
 
-.valvoline-badge strong {
-  font-family: var(--font-heading);
-  font-weight: 800;
-}
-
 .hero-luxury-title {
   font-family: var(--font-heading);
-  font-size: 5rem;
+  font-size: 4.5rem;
   font-weight: 800;
   color: var(--color-white);
-  line-height: 1.05;
+  line-height: 1.1;
   letter-spacing: -1.5px;
-  margin-bottom: 30px;
+  margin-bottom: 25px;
+  text-shadow: 0 2px 10px rgba(0,0,0,0.3);
   opacity: 0;
   animation: heroFadeUp 0.8s ease-out 0.4s forwards;
 }
 
-.text-italic {
-  font-style: italic;
+.text-brand-red {
+  color: var(--color-brand-red);
+  text-shadow: none;
 }
 
 .hero-luxury-desc {
-  font-size: 1.25rem;
-  color: #D3D6D9; 
+  font-size: 1.2rem;
+  color: #F0F0F0;
   font-weight: 400;
-  line-height: 1.8;
-  max-width: 600px;
-  margin-bottom: 50px;
+  line-height: 1.7;
+  max-width: 550px;
+  margin-bottom: 40px;
+  text-shadow: 0 1px 5px rgba(0,0,0,0.2);
   opacity: 0;
   animation: heroFadeUp 0.8s ease-out 0.6s forwards;
 }
@@ -125,35 +139,53 @@
 }
 
 /* Mobile Responsive */
-@media (max-width: 1024px) {
-  .hero-gradient-overlay {
-    background: linear-gradient(135deg, rgba(26, 29, 32, 0.98) 0%, rgba(26, 29, 32, 0.7) 100%);
+@media (max-width: 1200px) {
+  .hero-luxury-title {
+    font-size: 3.5rem;
+  }
+}
+
+@media (max-width: 900px) {
+  .luxury-hero {
+    width: 95%;
+    margin-top: 100px;
+    border-radius: 20px;
+    aspect-ratio: 3 / 2;
+  }
+  .hero-luxury-title {
+    font-size: 2.2rem;
+  }
+  .hero-luxury-desc {
+    font-size: 1rem;
+    max-width: 90%;
   }
 }
 
 @media (max-width: 768px) {
-  .hero-luxury-content {
-    padding-top: 40px;
-    padding-bottom: 40px;
+  .luxury-hero {
+    width: 92%;
+    margin-top: 90px;
+    border-radius: 16px;
+    aspect-ratio: 3 / 2; 
   }
-  .hero-luxury-title {
-    font-size: 3.5rem;
+
+  .hero-luxury-container {
+    display: none; /* Hide all content (text, buttons, badges) on mobile */
   }
-  .hero-luxury-desc {
-    font-size: 1.1rem;
-    margin-bottom: 40px;
+
+  .hero-gradient-overlay {
+    display: none; /* Remove vignette/gradient effect on mobile */
   }
-  .valvoline-badge {
-    padding: 6px 15px;
-    margin-bottom: 25px;
-  }
-  .valvoline-badge span {
-    font-size: 0.7rem;
+
+  .hero-bg-image {
+    background-position: center center; /* Center the image on mobile */
   }
 }
 
 @media (max-width: 480px) {
-  .hero-luxury-title {
-    font-size: 2.8rem;
+  .luxury-hero {
+    width: 95%;
+    margin-top: 85px;
+    aspect-ratio: 3 / 2;
   }
 }

@@ -6,19 +6,19 @@ const Footer = () => {
   return (
     <footer id="contact" className="corporate-footer">
       <div className="container">
-        
+
         <div className="footer-corporate-grid">
-          
+
           <div className="footer-brand-section">
             <a href="#home" className="footer-logo">
-              <Droplet className="text-valvoline-red" size={32} strokeWidth={2.5}/>
+              <img src="/assets/logo.png" alt="AK Groups Logo" className="footer-logo-img" />
               <div className="brand-text">
-                <span className="brand-name" style={{color: 'white'}}>AK GROUPS</span>
-                <span className="brand-sub">PREMIUM FILLING STATION</span>
+                <span className="brand-name" style={{ color: 'white' }}>AK GROUPS</span>
+                <span className="brand-sub" style={{ color: '#90959A' }}>PREMIUM ADBLUE STATION</span>
               </div>
             </a>
             <p className="footer-corporate-desc">
-              The premier destination in Cumbum for ultra-refined AdBlue and Diesel. Engineered specifically for the maximum performance and longevity of heavy commercial fleets.
+              The premier destination in Cumbum for ultra-refined AdBlue. Engineered specifically for the maximum performance and longevity of heavy commercial fleets.
             </p>
           </div>
 
@@ -27,7 +27,7 @@ const Footer = () => {
             <ul className="corporate-links">
               <li><a href="#home">Home</a></li>
               <li><a href="#advantages">Our Advantages</a></li>
-              <li><a href="#about">Valvoline Partnership</a></li>
+              <li><a href="#about">Partnership</a></li>
               <li><a href="#reviews">Testimonials</a></li>
             </ul>
           </div>
@@ -36,16 +36,19 @@ const Footer = () => {
             <h4 className="footer-col-title">HEADQUARTERS</h4>
             <ul className="corporate-contact-info">
               <li>
-                <MapPin className="text-valvoline-blue" size={20} />
-                <span>AK Groups Highway Point,<br/>Cumbum By-pass, Theni,<br/>Tamil Nadu 625516</span>
+                <MapPin className="text-brand-red" size={20} />
+                <span>Indira colony,<br />C.Pudupatti,<br />Cumbum - 625556.<br />Theni (Dt)</span>
               </li>
               <li>
-                <Phone className="text-valvoline-blue" size={20} />
-                <span>+91 98765 43210</span>
+                <Phone className="text-brand-red" size={20} />
+                <div style={{ display: 'flex', flexDirection: 'column' }}>
+                  <span>+91 93622 25555</span>
+                  <span>+91 97881 11666</span>
+                </div>
               </li>
               <li>
-                <Mail className="text-valvoline-blue" size={20} />
-                <span>fuel@akgroups.in</span>
+                <Mail className="text-brand-red" size={20} />
+                <span>akcumbum@gmail.com</span>
               </li>
             </ul>
           </div>
@@ -53,14 +56,16 @@ const Footer = () => {
         </div>
 
         <div className="footer-corporate-bottom">
-          <p className="copyright">&copy; {new Date().getFullYear()} AK Groups Filling Station. All Rights Reserved.</p>
-          
-          <div className="footer-partners">
-            <span>Powered by</span>
-            <strong className="text-valvoline-blue">VALVOLINE <span className="text-valvoline-red">ADBLUE</span></strong>
+          <p className="copyright">&copy; 2026 AK Groups AdBlue Station. All Rights Reserved.</p>
+
+          <div className="footer-bottom-info">
+            <div className="footer-partners">
+              <span>Powered by</span>
+              <strong className="text-brand-red">Valvoline</strong>
+            </div>
+
+            <p className="credits">Designed by <strong className="text-brand-red">Navi Promotions</strong></p>
           </div>
-          
-          <p className="credits">Designed by <strong className="text-valvoline-red">Navi Promotions</strong></p>
         </div>
 
       </div>

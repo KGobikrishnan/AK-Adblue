@@ -21,20 +21,22 @@ const Header = () => {
       <div className="container header-content">
         
         <a href="#home" className="brand-logo">
-          <Droplet className="valvoline-blue-icon" size={28} strokeWidth={2.5}/>
+          <img src="/assets/logo.png" alt="Adblue Logo" className="header-logo-img" />
           <div className="brand-text">
-            <span className="brand-name">AK GROUPS</span>
-            <span className="brand-sub">PREMIUM FILLING STATION</span>
+            <span className="brand-name">ADBLUE</span>
+            <span className="brand-sub">PREMIUM QUALITY</span>
           </div>
         </a>
 
         <nav className="desktop-nav">
-          <ul className="nav-links">
-            <li><a href="#home">Home</a></li>
-            <li><a href="#advantages">Advantages</a></li>
-            <li><a href="#about">Partnership</a></li>
-            <li><a href="#reviews">Reviews</a></li>
-          </ul>
+          <div className="nav-rounded-bar">
+            <ul className="nav-links">
+              <li><a href="#home">Home</a></li>
+              <li><a href="#advantages">Advantages</a></li>
+              <li><a href="#about">Partnership</a></li>
+              <li><a href="#reviews">Reviews</a></li>
+            </ul>
+          </div>
         </nav>
 
         <a href="#contact" className="brand-cta">Contact Us</a>
@@ -51,7 +53,7 @@ const Header = () => {
           <li><a href="#advantages" onClick={toggleMenu}>Advantages</a></li>
           <li><a href="#about" onClick={toggleMenu}>Partnership</a></li>
           <li><a href="#reviews" onClick={toggleMenu}>Reviews</a></li>
-          <li><a href="#contact" className="valvoline-red-text" onClick={toggleMenu}>Contact Us</a></li>
+          <li><a href="#contact" className="brand-red-text" onClick={toggleMenu}>Contact Us</a></li>
         </ul>
       </div>
     </header>

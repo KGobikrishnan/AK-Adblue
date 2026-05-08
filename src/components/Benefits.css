@@ -1,39 +1,41 @@
 .luxury-benefits {
-  background-color: var(--color-light-bg);
+  background-color: var(--color-gray-light);
   position: relative;
 }
 
 .luxury-section-header {
   text-align: center;
-  margin-bottom: 80px;
+  margin-bottom: 70px;
 }
 
 .luxury-section-subtitle {
   font-family: var(--font-body);
-  font-weight: 600;
-  font-size: 0.85rem;
+  font-weight: 700;
+  font-size: 0.8rem;
   letter-spacing: 3px;
   text-transform: uppercase;
-  margin-bottom: 15px;
+  margin-bottom: 12px;
+  color: var(--color-brand-red);
 }
 
 .luxury-section-title {
   font-family: var(--font-heading);
-  font-size: 3.5rem;
+  font-size: 3.2rem;
   font-weight: 800;
-  letter-spacing: -1px;
+  letter-spacing: -1.5px;
+  color: var(--color-dark);
 }
 
 .luxury-benefits-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 40px;
+  gap: 35px;
 }
 
 .luxury-benefit-card {
   background-color: var(--color-white);
-  padding: 50px 40px;
-  border-radius: 8px; /* Elegant subtle rounding */
+  padding: 50px 45px;
+  border-radius: 20px;
   box-shadow: var(--shadow-sm);
   transition: all var(--transition-normal);
   border: 1px solid rgba(0,0,0,0.03);
@@ -41,70 +43,69 @@
   overflow: hidden;
 }
 
-.luxury-benefit-card::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 0;
-  height: 3px;
-  background-color: var(--color-valvoline-red);
-  transition: width var(--transition-normal);
-}
-
 .luxury-benefit-card:hover {
-  transform: translateY(-5px);
+  transform: translateY(-8px);
   box-shadow: var(--shadow-lg);
-}
-
-.luxury-benefit-card:hover::before {
-  width: 100%;
+  border-color: rgba(227, 24, 55, 0.1);
 }
 
 .luxury-benefit-icon {
   position: relative;
   display: inline-flex;
-  margin-bottom: 30px;
-  color: var(--color-valvoline-blue);
+  margin-bottom: 25px;
+  color: var(--color-brand-red);
+  padding: 15px;
+  background: rgba(227, 24, 55, 0.05);
+  border-radius: 12px;
 }
 
 .icon-accent-dot {
   position: absolute;
-  top: -2px;
-  right: -5px;
+  top: 8px;
+  right: 8px;
   width: 8px;
   height: 8px;
   border-radius: 50%;
-  background-color: var(--color-valvoline-red);
+  background-color: var(--color-brand-red);
+  box-shadow: 0 0 10px rgba(227, 24, 55, 0.4);
 }
 
 .luxury-benefit-title {
   font-family: var(--font-heading);
-  font-size: 1.5rem;
-  font-weight: 700;
+  font-size: 1.4rem;
+  font-weight: 800;
   margin-bottom: 15px;
   color: var(--color-dark);
 }
 
 .luxury-benefit-desc {
-  font-size: 1.05rem;
+  font-size: 1rem;
   color: var(--color-gray-text);
-  line-height: 1.7;
+  line-height: 1.8;
 }
 
 /* Mobile Responsive */
 @media (max-width: 900px) {
   .luxury-benefits-grid {
-    grid-template-columns: 1fr;
-    gap: 30px;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+  .luxury-section-title {
+    font-size: 2.2rem;
+  }
+  .luxury-benefit-card {
+    padding: 30px 20px;
   }
 }
 
-@media (max-width: 768px) {
-  .luxury-section-title {
-    font-size: 2.5rem;
+@media (max-width: 600px) {
+  .luxury-benefits-grid {
+    gap: 15px;
   }
-  .luxury-benefit-card {
-    padding: 40px 30px;
+  .luxury-benefit-title {
+    font-size: 1.1rem;
+  }
+  .luxury-benefit-desc {
+    font-size: 0.85rem;
   }
 }
