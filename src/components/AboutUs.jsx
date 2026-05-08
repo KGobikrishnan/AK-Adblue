@@ -1,16 +1,30 @@
-import React, { useRef } from 'react';
-import { useInView } from 'framer-motion';
+import React, { useRef, useState, useEffect } from 'react';
+import { useInView, motion, AnimatePresence } from 'framer-motion';
 import './AboutUs.css';
+
+const images = [
+  '/assets/1.jpeg',
+  '/assets/1.dng',
+  '/assets/2.dng'
+];
 
 const AboutUs = () => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentIndex((prev) => (prev + 1) % images.length);
+    }, 4000);
+    return () => clearInterval(timer);
+  }, []);
 
   return (
     <section id="about" className="luxury-about section-padding">
       <div className="container about-luxury-container" ref={ref}>
-
-        <div
+        
+        <div 
           className="about-luxury-content"
           style={{
             opacity: isInView ? 1 : 0,
@@ -21,7 +35,7 @@ const AboutUs = () => {
           <div className="about-luxury-header">
             <span className="luxury-section-subtitle text-brand-red">THE PARTNERSHIP</span>
           </div>
-
+          
           <h2 className="about-title-margin">
             ELITE <span className="desktop-only"><br /></span><span className="text-brand-red">STANDARDS.</span>
           </h2>
@@ -40,7 +54,18 @@ const AboutUs = () => {
             </p>
 
             <div className="about-luxury-image-wrapper mobile-only">
-              <img src="/assets/1.jpeg" alt="Adblue Filling Process" className="about-luxury-image" />
+              <AnimatePresence mode="wait">
+                <motion.img
+                  key={currentIndex}
+                  src={images[currentIndex]}
+                  alt="Adblue Filling Process"
+                  className="about-luxury-image"
+                  initial={{ opacity: 0, x: 20 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  exit={{ opacity: 0, x: -20 }}
+                  transition={{ duration: 0.6, ease: "easeInOut" }}
+                />
+              </AnimatePresence>
               <div className="luxury-image-accent"></div>
             </div>
 
@@ -58,7 +83,7 @@ const AboutUs = () => {
           </div>
         </div>
 
-        <div
+        <div 
           className="about-luxury-image-wrapper desktop-only"
           style={{
             opacity: isInView ? 1 : 0,
@@ -66,7 +91,18 @@ const AboutUs = () => {
             transition: 'all 0.8s cubic-bezier(0.17, 0.55, 0.55, 1) 0.2s'
           }}
         >
-          <img src="/assets/1.jpeg" alt="Adblue Filling Process" className="about-luxury-image" />
+          <AnimatePresence mode="wait">
+            <motion.img
+              key={currentIndex}
+              src={images[currentIndex]}
+              alt="Adblue Filling Process"
+              className="about-luxury-image"
+              initial={{ opacity: 0, x: 40 }}
+              animate={{ opacity: 1, x: 0 }}
+              exit={{ opacity: 0, x: -40 }}
+              transition={{ duration: 0.8, ease: "easeInOut" }}
+            />
+          </AnimatePresence>
           <div className="luxury-image-accent"></div>
         </div>
 
