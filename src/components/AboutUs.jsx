@@ -3,7 +3,7 @@ import { useInView, motion, AnimatePresence } from 'framer-motion';
 import './AboutUs.css';
 
 const images = [
-  '/assets/1.jpeg',
+  'https://www.neftgen.com/wp-content/uploads/2023/06/adblue-dolum-istasyonlari.jpg',
   '/assets/1.dng',
   '/assets/2.dng'
 ];
@@ -37,7 +37,7 @@ const AboutUs = () => {
           </div>
           
           <h2 className="about-title-margin">
-            ELITE <span className="desktop-only"><br /></span><span className="text-brand-red">STANDARDS.</span>
+            ELITE <span className="text-brand-red">STANDARDS.</span>
           </h2>
           
           <div className="about-text-content">

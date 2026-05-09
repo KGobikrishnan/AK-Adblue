@@ -43,14 +43,14 @@
 .brand-name {
   font-family: var(--font-heading);
   font-weight: 800;
-  font-size: 1.5rem;
+  font-size: 1.1rem;
   letter-spacing: 1px;
   color: var(--color-brand-red);
   line-height: 1;
 }
 
 .brand-sub {
-  font-size: 0.65rem;
+  font-size: 0.45rem;
   font-weight: 600;
   letter-spacing: 2px;
   text-transform: uppercase;

@@ -9,7 +9,6 @@ import Location from './components/Location';
 import Footer from './components/Footer';
 
 const preloadImages = [
-  '/assets/1.jpeg',
   '/assets/1.dng',
   '/assets/2.dng',
   '/assets/hero.jpeg'
